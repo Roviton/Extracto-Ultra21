@@ -1,0 +1,19 @@
+-- Temporarily disable RLS for testing
+-- WARNING: This is for development only, not for production
+
+ALTER TABLE companies DISABLE ROW LEVEL SECURITY;
+ALTER TABLE users DISABLE ROW LEVEL SECURITY;
+ALTER TABLE drivers DISABLE ROW LEVEL SECURITY;
+ALTER TABLE customers DISABLE ROW LEVEL SECURITY;
+ALTER TABLE loads DISABLE ROW LEVEL SECURITY;
+ALTER TABLE load_drivers DISABLE ROW LEVEL SECURITY;
+ALTER TABLE load_status_history DISABLE ROW LEVEL SECURITY;
+ALTER TABLE load_timeline DISABLE ROW LEVEL SECURITY;
+ALTER TABLE communications DISABLE ROW LEVEL SECURITY;
+ALTER TABLE payments DISABLE ROW LEVEL SECURITY;
+ALTER TABLE ai_usage_tracking DISABLE ROW LEVEL SECURITY;
+ALTER TABLE ocr_extractions DISABLE ROW LEVEL SECURITY;
+ALTER TABLE equipment_types DISABLE ROW LEVEL SECURITY;
+
+-- Add a comment to remember this is temporary
+COMMENT ON TABLE loads IS 'RLS temporarily disabled for testing';

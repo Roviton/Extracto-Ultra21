@@ -1,0 +1,223 @@
+VM2250 5722-43a5d5043eaf7f43.js:1 
+            
+            
+           POST https://zdepektfdkyisbufygxd.supabase.co/rest/v1/rpc/assign_driver_to_load 400 (Bad Request)
+globalThis.fetch @ VM2250 5722-43a5d5043eaf7f43.js:1
+(anonymous) @ supabase-js.mjs:2
+(anonymous) @ helpers.ts:36
+h @ fetch.ts:43
+Promise.then
+c @ supabase-js.mjs:2
+(anonymous) @ supabase-js.mjs:2
+S @ fetch.ts:39
+(anonymous) @ supabase-js.mjs:2
+then @ PostgrestBuilder.ts:101
+7054-28d83d44b9f4b201.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1 Error in RPC call: {code: '23514', details: 'Failing row contains (550e8400-e29b-41d4-a716-4466…ll, company, null, null, null, null, null, null).', hint: null, message: 'new row for relation "drivers" violates check constraint "drivers_status_check"'}
+window.console.error @ 7054-28d83d44b9f4b201.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+console.<computed> @ VM2250 5722-43a5d5043eaf7f43.js:1
+assignDriver @ 46d875e2-025a-4207-b6c1-2e0fef812111:109
+await in assignDriver
+handleAssignDriver @ a018b9e7-bf67-4d8c-b627-2c0c53312daf:78
+handleAssign @ c2a2a214-c96f-4a69-acec-36ddf089cd6f:140
+l5 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+V @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+l7 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+(anonymous) @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+tf @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+io @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+sD @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+s_ @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+<button>
+t.jsx @ 7054-28d83d44b9f4b201.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+Button @ VM2242 3101-e0070e361e67cb85.js:1
+react-stack-bottom-frame @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+rx @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+oG @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+af @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+V @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lT @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lC @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lx @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lf @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+l1 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lK @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lm @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+f @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+t.flushSync @ 7054-28d83d44b9f4b201.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+u @ VM2246 796-d5f5ddbfe88782cc.js:1
+(anonymous) @ VM2248 4916-aa686cf821c48188.js:1
+(anonymous) @ VM2246 796-d5f5ddbfe88782cc.js:1
+l5 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+V @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+l7 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+(anonymous) @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+tf @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+io @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+sD @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+s_ @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+<Button>
+t.jsxDEV @ VM2252 8325-3553a2b2ecd579f1.js:1
+jsxDEV @ VM2250 5722-43a5d5043eaf7f43.js:1
+AssignDriverModal @ c2a2a214-c96f-4a69-acec-36ddf089cd6f:179
+react-stack-bottom-frame @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+rx @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+o8 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+af @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+V @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lT @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lC @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lx @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lf @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+l1 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lK @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lm @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+f @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+t.flushSync @ 7054-28d83d44b9f4b201.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+u @ VM2246 796-d5f5ddbfe88782cc.js:1
+(anonymous) @ VM2248 4916-aa686cf821c48188.js:1
+(anonymous) @ VM2246 796-d5f5ddbfe88782cc.js:1
+l5 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+V @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+l7 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+(anonymous) @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+tf @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+io @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+sD @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+s_ @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+<AssignDriverModal>
+t.jsxDEV @ VM2252 8325-3553a2b2ecd579f1.js:1
+jsxDEV @ VM2250 5722-43a5d5043eaf7f43.js:1
+ModalProvider @ 8eaeea45-337b-4133-9b4c-9268883fee6d:53
+react-stack-bottom-frame @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+rx @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+o8 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+af @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+V @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lT @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lC @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lx @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lf @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+l1 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lK @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lm @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+f @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+t.flushSync @ 7054-28d83d44b9f4b201.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+u @ VM2246 796-d5f5ddbfe88782cc.js:1
+(anonymous) @ VM2248 4916-aa686cf821c48188.js:1
+(anonymous) @ VM2246 796-d5f5ddbfe88782cc.js:1
+l5 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+V @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+l7 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+(anonymous) @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+tf @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+io @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+sD @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+s_ @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+7054-28d83d44b9f4b201.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1 Error in assignDriver: Error: Error assigning driver: new row for relation "drivers" violates check constraint "drivers_status_check"
+    at assignDriver (46d875e2-025a-4207-b6c1-2e0fef812111:110:23)
+    at async handleAssignDriver (a018b9e7-bf67-4d8c-b627-2c0c53312daf:78:13)
+    at async handleAssign (c2a2a214-c96f-4a69-acec-36ddf089cd6f:140:17)
+window.console.error @ 7054-28d83d44b9f4b201.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+console.<computed> @ VM2250 5722-43a5d5043eaf7f43.js:1
+assignDriver @ 46d875e2-025a-4207-b6c1-2e0fef812111:117
+await in assignDriver
+handleAssignDriver @ a018b9e7-bf67-4d8c-b627-2c0c53312daf:78
+handleAssign @ c2a2a214-c96f-4a69-acec-36ddf089cd6f:140
+l5 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+V @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+l7 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+(anonymous) @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+tf @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+io @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+sD @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+s_ @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+<button>
+t.jsx @ 7054-28d83d44b9f4b201.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+Button @ VM2242 3101-e0070e361e67cb85.js:1
+react-stack-bottom-frame @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+rx @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+oG @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+af @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+V @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lT @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lC @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lx @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lf @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+l1 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lK @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lm @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+f @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+t.flushSync @ 7054-28d83d44b9f4b201.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+u @ VM2246 796-d5f5ddbfe88782cc.js:1
+(anonymous) @ VM2248 4916-aa686cf821c48188.js:1
+(anonymous) @ VM2246 796-d5f5ddbfe88782cc.js:1
+l5 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+V @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+l7 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+(anonymous) @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+tf @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+io @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+sD @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+s_ @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+<Button>
+t.jsxDEV @ VM2252 8325-3553a2b2ecd579f1.js:1
+jsxDEV @ VM2250 5722-43a5d5043eaf7f43.js:1
+AssignDriverModal @ c2a2a214-c96f-4a69-acec-36ddf089cd6f:179
+react-stack-bottom-frame @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+rx @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+o8 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+af @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+V @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lT @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lC @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lx @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lf @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+l1 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lK @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lm @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+f @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+t.flushSync @ 7054-28d83d44b9f4b201.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+u @ VM2246 796-d5f5ddbfe88782cc.js:1
+(anonymous) @ VM2248 4916-aa686cf821c48188.js:1
+(anonymous) @ VM2246 796-d5f5ddbfe88782cc.js:1
+l5 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+V @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+l7 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+(anonymous) @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+tf @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+io @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+sD @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+s_ @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+<AssignDriverModal>
+t.jsxDEV @ VM2252 8325-3553a2b2ecd579f1.js:1
+jsxDEV @ VM2250 5722-43a5d5043eaf7f43.js:1
+ModalProvider @ 8eaeea45-337b-4133-9b4c-9268883fee6d:53
+react-stack-bottom-frame @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+rx @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+o8 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+af @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+V @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lT @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lC @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lx @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lf @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+l1 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lK @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+lm @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+f @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+t.flushSync @ 7054-28d83d44b9f4b201.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+u @ VM2246 796-d5f5ddbfe88782cc.js:1
+(anonymous) @ VM2248 4916-aa686cf821c48188.js:1
+(anonymous) @ VM2246 796-d5f5ddbfe88782cc.js:1
+l5 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+V @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+l7 @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+(anonymous) @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+tf @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+io @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+sD @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+s_ @ 34da1496-2ef787c392b423e6.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1
+7054-28d83d44b9f4b201.js?dpl=dpl_DRZynV3LzZtHeeC8WnCfdSF1fhhP:1 Error assigning driver: Error: Error assigning driver: new row for relation "drivers" violates check constraint "drivers_status_check"
+    at assignDriver (46d875e2-025a-4207-b6c1-2e0fef812111:110:23)
+    at async handleAssignDriver (a018b9e7-bf67-4d8c-b627-2c0c53312daf:78:13)
+    at async handleAssign (c2a2a214-c96f-4a69-acec-36ddf089cd6f:140:17)

@@ -1,15 +1,13 @@
 import type React from "react"
 import Providers from "./providers"
-import Script from "next/script"
+import { Analytics } from '@vercel/analytics/react'
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <Script src="https://va.vercel-scripts.com/v1/speed-insights/script.js" strategy="afterInteractive" />
-      </head>
       <body>
         <Providers>{children}</Providers>
+        <Analytics />
       </body>
     </html>
   )

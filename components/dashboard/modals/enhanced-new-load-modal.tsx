@@ -719,7 +719,7 @@ export const EnhancedNewLoadModal = () => {
             <div className="flex-1 overflow-auto p-4 bg-gray-50">
               {documentUrl && (
                 <div className="flex justify-center">
-                  {documentUrl.endsWith(".pdf") ? (
+                  {(documentUrl.endsWith(".pdf") || documentUrl.includes("application/pdf")) ? (
                     <canvas
                       ref={canvasRef}
                       className="border border-gray-300 shadow-lg bg-white rounded"

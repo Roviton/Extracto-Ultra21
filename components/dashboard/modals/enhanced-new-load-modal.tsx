@@ -13,7 +13,6 @@ import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { BillOfLadingData } from "@/lib/ai-service"
 import { cn } from "@/lib/utils"
-import { put } from "@vercel/blob"
 import { Upload, Search, Brain, FileDigit, Loader2, Check, X, ChevronLeft, ChevronRight, ZoomIn, ZoomOut, Download, Trash, Plus, Minus, RefreshCw, FileUp, ArrowRight, FileText, CheckCircle2, BarChart } from "lucide-react"
 
 // Declare PDF.js types
@@ -57,7 +56,7 @@ export const EnhancedNewLoadModal = () => {
 
   // Extraction process tracking
   const [extractionStepsList, setExtractionStepsList] = useState<ExtractionStep[]>([
-    { id: "upload", label: "Uploading document", status: "pending", icon: <Upload className="h-4 w-4" /> },
+    { id: "prepare", label: "Preparing document", status: "pending", icon: <FileUp className="h-4 w-4" /> },
     { id: "ocr", label: "OCR processing", status: "pending", icon: <Search className="h-4 w-4" /> },
     { id: "ai", label: "AI extraction", status: "pending", icon: <Brain className="h-4 w-4" /> },
     { id: "form", label: "Preparing form data", status: "pending", icon: <FileDigit className="h-4 w-4" /> },
@@ -307,49 +306,31 @@ export const EnhancedNewLoadModal = () => {
     setExtractionProgress(0)
 
     try {
-      // Step 1: Upload to Vercel Blob
-      updateExtractionStep("upload", "processing")
-
-      const formData = new FormData()
-      formData.append("file", file)
-
-      const uploadResponse = await fetch("/api/blob/upload", {
-        method: "POST",
-        body: formData,
-      })
-
-      if (!uploadResponse.ok) {
-        updateExtractionStep("upload", "error")
-        throw new Error("Failed to upload document")
-      }
-
-      const uploadResult = await uploadResponse.json()
-      if (!uploadResult.success) {
-        updateExtractionStep("upload", "error")
-        throw new Error(uploadResult.error || "Failed to upload document")
-      }
-
-      setDocumentUrl(uploadResult.data.url)
-      setUploadSuccess(true)
-      setShowPreview(true)
-      updateExtractionStep("upload", "completed")
-
-      // Step 2: OCR Processing
-      updateExtractionStep("ocr", "processing")
-      console.log("OCR API route called")
-
-      // Step 3: AI Extraction
-      const fileType = file.type
+      // Step 1: Prepare document for preview (in-memory only)
+      updateExtractionStep("prepare", "processing")
+      
+      // Use FileReader to read the file as data URL
       const reader = new FileReader()
-
+      
       reader.onload = async (e) => {
         const dataUrl = e.target?.result as string
-
+        
+        // Set the document URL for preview (in-memory only)
+        setDocumentUrl(dataUrl)
+        setUploadSuccess(true)
+        setShowPreview(true)
+        updateExtractionStep("prepare", "completed")
+        
+        // Step 2: OCR Processing
+        updateExtractionStep("ocr", "processing")
+        console.log("OCR processing started")
+        
         try {
           updateExtractionStep("ocr", "completed")
           console.log("Processing document with AI service...")
           updateExtractionStep("ai", "processing")
-
+          
+          // Step 3: AI Extraction (using the in-memory dataUrl)
           const extractResponse = await fetch("/api/ai/extract-document", {
             method: "POST",
             headers: {
@@ -427,8 +408,8 @@ export const EnhancedNewLoadModal = () => {
     setExtractionProgress(0)
 
     try {
-      // Mark upload as completed immediately since we're using a URL
-      updateExtractionStep("upload", "completed")
+      // Mark preparation as completed immediately since we're using a URL
+      updateExtractionStep("prepare", "completed")
 
       // Start OCR and AI extraction
       updateExtractionStep("ocr", "processing")
@@ -690,7 +671,13 @@ export const EnhancedNewLoadModal = () => {
 
   return (
     <Dialog open={isModalOpen} onOpenChange={onClose}>
-      <DialogContent className="max-w-[90vw] max-h-[90vh] p-0 overflow-hidden flex">
+      <DialogContent 
+        className="max-w-[90vw] max-h-[90vh] p-0 overflow-hidden flex"
+        aria-describedby="dialog-description"
+      >
+        <div id="dialog-description" className="sr-only">
+          Document upload and extraction interface for creating new loads.
+        </div>
         {/* Document Preview Panel */}
         {showPreview && (
           <div className="w-1/2 border-r border-gray-200 flex flex-col h-[90vh]">

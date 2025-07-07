@@ -1,10 +1,8 @@
 "use client"
 
-import { useState, useEffect, useCallback } from "react"
-import { supabase } from "@/lib/supabase"
-import { useAuth } from "@/contexts/auth-context"
+import { useState, useCallback } from "react"
 
-interface Load {
+export interface Load {
   id: string
   load_number?: string | null
   reference_number?: string | null
@@ -49,150 +47,59 @@ interface Load {
   company_id?: string | null
 }
 
-export default function useLoads({ viewMode = "active" }: { viewMode?: "active" | "history" | "all" } = {}) {
-  const [loads, setLoads] = useState<any[]>([])
-  const [loading, setLoading] = useState(true)
+// Mock data for loads
+const mockLoads: Load[] = [
+  {
+    id: "1",
+    load_number: "L001",
+    status: "active",
+    pickup_date: "2023-06-01",
+    delivery_date: "2023-06-03",
+    pickup_location: "Chicago, IL",
+    delivery_location: "New York, NY",
+    commodity: "Electronics",
+    rate: 1500,
+  },
+  {
+    id: "2",
+    load_number: "L002",
+    status: "delivered",
+    pickup_date: "2023-05-28",
+    delivery_date: "2023-05-30",
+    pickup_location: "Los Angeles, CA",
+    delivery_location: "Phoenix, AZ",
+    commodity: "Furniture",
+    rate: 1200,
+  },
+]
+
+function useLoads({ viewMode = "active" }: { viewMode?: "active" | "history" | "all" } = {}) {
+  const [loads, setLoads] = useState<Load[]>(mockLoads)
+  const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
-  const { user } = useAuth()
 
-  const fetchLoads = useCallback(async () => {
-    if (!user?.companyId) {
-      console.log("No company ID found, clearing loads")
-      setLoads([])
-      setLoading(false)
-      return
-    }
-
+  const refreshLoads = useCallback(async () => {
+    setIsLoading(true)
+    setError(null)
+    
     try {
-      setLoading(true)
-      setError(null)
-
-      console.log("🔍 Fetching loads for company:", user.companyId)
-
-      let query = supabase
-        .from("loads")
-        .select(`
-          *,
-          customer:customers(*),
-          load_drivers(
-            *,
-            driver:drivers(*)
-          )
-        `)
-        .eq("company_id", user.companyId) // CRITICAL: Filter by company_id
-
-      // Apply view mode filter
-      if (viewMode === "active") {
-        query = query.in("status", ["new", "assigned", "accepted", "in_progress"])
-      } else if (viewMode === "history") {
-        query = query.in("status", ["completed", "cancelled", "archived"])
-      } else if (viewMode === "all") {
-        // No filter for 'all' mode
-      }
-
-      query = query.order("created_at", { ascending: false })
-
-      const { data, error: fetchError } = await query
-
-      if (fetchError) {
-        throw fetchError
-      }
-
-      console.log(`✅ Fetched ${data?.length || 0} loads for company ${user.companyId}`)
-      setLoads(data || [])
-    } catch (err: any) {
+      // In a real implementation, this would fetch from an API
+      // For now, we just use our mock data
+      setLoads(mockLoads)
+    } catch (err) {
       console.error("Error fetching loads:", err)
-      setError(err.message || "Failed to fetch loads")
-      setLoads([])
+      setError("Failed to fetch loads")
     } finally {
-      setLoading(false)
+      setIsLoading(false)
     }
-  }, [user?.companyId, viewMode])
-
-  const updateLoadStatus = useCallback(
-    async (loadId: string, status: string) => {
-      try {
-        const { error: updateError } = await supabase
-          .from("loads")
-          .update({ status, updated_at: new Date().toISOString() })
-          .eq("id", loadId)
-          .eq("company_id", user?.companyId) // Ensure company isolation
-
-        if (updateError) {
-          throw updateError
-        }
-
-        // Update local state
-        setLoads((prevLoads) =>
-          prevLoads.map((load) =>
-            load.id === loadId ? { ...load, status, updated_at: new Date().toISOString() } : load,
-          ),
-        )
-
-        return true
-      } catch (err: any) {
-        console.error("Error updating load status:", err)
-        throw err
-      }
-    },
-    [user?.companyId],
-  )
-
-  const assignDriver = async (loadId: string, driverId: string) => {
-    try {
-      console.log("Assigning driver:", { loadId, driverId, assignedBy: user?.id, companyId: user?.companyId })
-
-      // First, check if the driver exists and belongs to the same company
-      const { data: driverData, error: driverError } = await supabase
-        .from("drivers")
-        .select("id, name, status, is_active, company_id")
-        .eq("id", driverId)
-        .eq("company_id", user?.companyId) // Ensure driver belongs to same company
-        .single()
-
-      if (driverError) {
-        console.error("Error fetching driver:", driverError)
-        throw new Error(`Error fetching driver: ${driverError.message}`)
-      }
-
-      if (!driverData.is_active) {
-        throw new Error("Driver is not active and cannot be assigned")
-      }
-
-      console.log("Driver data:", driverData)
-
-      // Try the simplified assignment function with company isolation
-      const { error: assignError } = await supabase.rpc("assign_driver_to_load_simple", {
-        p_load_id: loadId,
-        p_driver_id: driverId,
-        p_assigned_by: user?.id || null,
-      })
-
-      if (assignError) {
-        console.error("Error in simplified RPC call:", assignError)
-        throw new Error(`Error assigning driver: ${assignError.message}`)
-      }
-
-      // Refresh the loads data to reflect the changes
-      await fetchLoads()
-
-      return true
-    } catch (error: any) {
-      console.error("Error in assignDriver:", error)
-      throw error
-    }
-  }
-
-  useEffect(() => {
-    fetchLoads()
-  }, [fetchLoads])
+  }, [])
 
   return {
-    loads: loads || [],
-    loading: loading || false,
-    error: error || null,
-    updateLoadStatus,
-    assignDriver,
-    refetch: fetchLoads,
+    loads,
+    isLoading,
+    error,
+    refreshLoads,
   }
 }
+
+export default useLoads;

@@ -6,9 +6,9 @@ import { useState } from "react"
 import type React from "react"
 import "@/app/globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { AuthProvider } from "@/contexts/auth-context"
 import { Toaster } from "@/components/ui/toaster"
 import { ModalProvider } from "@/components/modal-provider"
+import { AuthProvider } from "@/contexts/auth-context"
 
 export default function Providers({ children }: { children: React.ReactNode }) {
   const [queryClient] = useState(() => new QueryClient())

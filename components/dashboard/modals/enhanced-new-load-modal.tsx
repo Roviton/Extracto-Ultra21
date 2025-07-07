@@ -132,8 +132,12 @@ export const EnhancedNewLoadModal = () => {
 
   // Render PDF when document URL changes
   useEffect(() => {
-    if (documentUrl && documentUrl.endsWith(".pdf") && showPreview) {
-      renderPDF(documentUrl)
+    if (documentUrl && showPreview) {
+      // Check if it's a PDF file either by extension or data URL content type
+      const isPdf = documentUrl.endsWith(".pdf") || documentUrl.includes("application/pdf")
+      if (isPdf) {
+        renderPDF(documentUrl)
+      }
     }
   }, [documentUrl, showPreview, zoomLevel])
 
@@ -149,7 +153,21 @@ export const EnhancedNewLoadModal = () => {
     }
 
     try {
-      const loadingTask = window.pdfjsLib.getDocument(url)
+      // For data URLs, we need to handle them differently
+      let pdfData: any = url
+      
+      // If it's a data URL, convert it to a typed array
+      if (url.startsWith('data:application/pdf;base64,')) {
+        const base64 = url.substring('data:application/pdf;base64,'.length)
+        const binaryString = window.atob(base64)
+        const bytes = new Uint8Array(binaryString.length)
+        for (let i = 0; i < binaryString.length; i++) {
+          bytes[i] = binaryString.charCodeAt(i)
+        }
+        pdfData = { data: bytes }
+      }
+      
+      const loadingTask = window.pdfjsLib.getDocument(pdfData)
       const pdf = await loadingTask.promise
       pdfDocRef.current = pdf
       setTotalPages(pdf.numPages)
